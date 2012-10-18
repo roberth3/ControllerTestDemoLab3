@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ControllerTestDemo.Domain.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            firstname
+        </th>
+        <th>
+            lastname
+        </th>
+        <th>
+            address
+        </th>
+        <th>
+            password
+        </th>
+        <th>
+            datejoined
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.username }) 
+        </td>
+        <td>
+            @item.firstname
+        </td>
+        <td>
+            @item.lastname
+        </td>
+        <td>
+            @item.address
+        </td>
+        <td>
+            @item.password
+        </td>
+        <td>
+            @String.Format("{0:g}", item.datejoined)
+        </td>
+    </tr>
+}
+
+</table>
+

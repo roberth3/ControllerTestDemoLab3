@@ -1,0 +1,30 @@
+﻿@model ControllerTestDemo.Domain.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">firstname</div>
+    <div class="display-field">@Model.firstname</div>
+
+    <div class="display-label">lastname</div>
+    <div class="display-field">@Model.lastname</div>
+
+    <div class="display-label">address</div>
+    <div class="display-field">@Model.address</div>
+
+    <div class="display-label">password</div>
+    <div class="display-field">@Model.password</div>
+
+    <div class="display-label">datejoined</div>
+    <div class="display-field">@String.Format("{0:g}", Model.datejoined)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
